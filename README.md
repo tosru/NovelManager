@@ -36,7 +36,7 @@ NovelManagerはMIT Licenseです。
 
 ## 連絡先
 
- githubのとこ
+tosru97+github@gmail.com
 
 ---
 
