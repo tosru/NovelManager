@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF297A26051D9304E6D4EB31 /* Pods_NarouManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C585BDDAE0ABFB8E2055E0 /* Pods_NarouManager.framework */; };
+		D904227F2441724900738452 /* NovelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D904227E2441724900738452 /* NovelInfo.swift */; };
+		D90422812441728F00738452 /* FavoriteNovel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90422802441728F00738452 /* FavoriteNovel.swift */; };
+		D9042284244172CA00738452 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9042283244172CA00738452 /* ApiService.swift */; };
+		D9366788244077B9002F4C70 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9366787244077B9002F4C70 /* FavoriteViewController.swift */; };
+		D936678A2440795A002F4C70 /* AddNovelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93667892440795A002F4C70 /* AddNovelView.swift */; };
+		D936678E244094E6002F4C70 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936678D244094E6002F4C70 /* FavoriteTableViewCell.swift */; };
+		D93667902440A2B3002F4C70 /* StorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D936678F2440A2B3002F4C70 /* StorySelectViewController.swift */; };
+		D93667922440B2F5002F4C70 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93667912440B2F5002F4C70 /* StoryCell.swift */; };
+		D9549677244C6B6F003CB6FA /* RankingSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9549676244C6B6F003CB6FA /* RankingSegmentedControlView.swift */; };
+		D97087462440380400324B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97087452440380400324B90 /* AppDelegate.swift */; };
+		D97087482440380400324B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97087472440380400324B90 /* SceneDelegate.swift */; };
+		D970874A2440380400324B90 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97087492440380400324B90 /* TabBarController.swift */; };
+		D970874F2440380600324B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D970874E2440380600324B90 /* Assets.xcassets */; };
+		D97087522440380600324B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97087502440380600324B90 /* LaunchScreen.storyboard */; };
+		D97504022442B53B00E63713 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97504012442B53B00E63713 /* Extension.swift */; };
+		D98969142446E0080027370E /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98969132446E0080027370E /* RankingCollectionViewCell.swift */; };
+		D9AED7502445AC9B00BBB169 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AED74F2445AC9B00BBB169 /* RankingViewController.swift */; };
+		D9DAC6352444641100ABD1BE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DAC6342444641100ABD1BE /* DataManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B3A445BFEFF1D497E2CA597 /* Pods-NarouManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NarouManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-NarouManager/Pods-NarouManager.release.xcconfig"; sourceTree = "<group>"; };
+		A1C585BDDAE0ABFB8E2055E0 /* Pods_NarouManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NarouManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D904227E2441724900738452 /* NovelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovelInfo.swift; sourceTree = "<group>"; };
+		D90422802441728F00738452 /* FavoriteNovel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNovel.swift; sourceTree = "<group>"; };
+		D9042283244172CA00738452 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		D9366787244077B9002F4C70 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		D93667892440795A002F4C70 /* AddNovelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNovelView.swift; sourceTree = "<group>"; };
+		D936678D244094E6002F4C70 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		D936678F2440A2B3002F4C70 /* StorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySelectViewController.swift; sourceTree = "<group>"; };
+		D93667912440B2F5002F4C70 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		D9549676244C6B6F003CB6FA /* RankingSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingSegmentedControlView.swift; sourceTree = "<group>"; };
+		D97087422440380400324B90 /* NovelManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NovelManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D97087452440380400324B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D97087472440380400324B90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D97087492440380400324B90 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D970874E2440380600324B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D97087512440380600324B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D97087532440380600324B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D97504012442B53B00E63713 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D98969132446E0080027370E /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D9AED74F2445AC9B00BBB169 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		D9DAC6342444641100ABD1BE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FE9C22E4DB91E82959422797 /* Pods-NarouManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NarouManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NarouManager/Pods-NarouManager.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D970873F2440380400324B90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF297A26051D9304E6D4EB31 /* Pods_NarouManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D5F68EC920C6986AB0E9A52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE9C22E4DB91E82959422797 /* Pods-NarouManager.debug.xcconfig */,
+				7B3A445BFEFF1D497E2CA597 /* Pods-NarouManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9042282244172A700738452 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D9042283244172CA00738452 /* ApiService.swift */,
+				D97504012442B53B00E63713 /* Extension.swift */,
+				D9DAC6342444641100ABD1BE /* DataManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		D936678424407329002F4C70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D93667892440795A002F4C70 /* AddNovelView.swift */,
+				D936678D244094E6002F4C70 /* FavoriteTableViewCell.swift */,
+				D93667912440B2F5002F4C70 /* StoryCell.swift */,
+				D98969132446E0080027370E /* RankingCollectionViewCell.swift */,
+				D9549676244C6B6F003CB6FA /* RankingSegmentedControlView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D936678524407330002F4C70 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D97087492440380400324B90 /* TabBarController.swift */,
+				D9366787244077B9002F4C70 /* FavoriteViewController.swift */,
+				D936678F2440A2B3002F4C70 /* StorySelectViewController.swift */,
+				D9AED74F2445AC9B00BBB169 /* RankingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D93667862440733A002F4C70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D904227E2441724900738452 /* NovelInfo.swift */,
+				D90422802441728F00738452 /* FavoriteNovel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D97087392440380400324B90 = {
+			isa = PBXGroup;
+			children = (
+				D97087442440380400324B90 /* NarouManager */,
+				D97087432440380400324B90 /* Products */,
+				7D5F68EC920C6986AB0E9A52 /* Pods */,
+				E26C4EC0388BC1D9AF15C16F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D97087432440380400324B90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D97087422440380400324B90 /* NovelManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D97087442440380400324B90 /* NarouManager */ = {
+			isa = PBXGroup;
+			children = (
+				D936678524407330002F4C70 /* ViewController */,
+				D936678424407329002F4C70 /* View */,
+				D93667862440733A002F4C70 /* Model */,
+				D9042282244172A700738452 /* Helper */,
+				D97087452440380400324B90 /* AppDelegate.swift */,
+				D97087472440380400324B90 /* SceneDelegate.swift */,
+				D970874E2440380600324B90 /* Assets.xcassets */,
+				D97087502440380600324B90 /* LaunchScreen.storyboard */,
+				D97087532440380600324B90 /* Info.plist */,
+			);
+			path = NarouManager;
+			sourceTree = "<group>";
+		};
+		E26C4EC0388BC1D9AF15C16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1C585BDDAE0ABFB8E2055E0 /* Pods_NarouManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D97087412440380400324B90 /* NarouManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D97087562440380600324B90 /* Build configuration list for PBXNativeTarget "NarouManager" */;
+			buildPhases = (
+				2BA22FE98613EB6557F6450F /* [CP] Check Pods Manifest.lock */,
+				D970873E2440380400324B90 /* Sources */,
+				D970873F2440380400324B90 /* Frameworks */,
+				D97087402440380400324B90 /* Resources */,
+				428DB4ED2024538829D63E73 /* [CP] Embed Pods Frameworks */,
+				D936678324403D7B002F4C70 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NarouManager;
+			productName = NarouManager;
+			productReference = D97087422440380400324B90 /* NovelManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D970873A2440380400324B90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				TargetAttributes = {
+					D97087412440380400324B90 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D970873D2440380400324B90 /* Build configuration list for PBXProject "NarouManager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D97087392440380400324B90;
+			productRefGroup = D97087432440380400324B90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D97087412440380400324B90 /* NarouManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D97087402440380400324B90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D97087522440380600324B90 /* LaunchScreen.storyboard in Resources */,
+				D970874F2440380600324B90 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BA22FE98613EB6557F6450F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NarouManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		428DB4ED2024538829D63E73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NarouManager/Pods-NarouManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NarouManager/Pods-NarouManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D936678324403D7B002F4C70 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: SwiftLint not installed.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D970873E2440380400324B90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D93667902440A2B3002F4C70 /* StorySelectViewController.swift in Sources */,
+				D970874A2440380400324B90 /* TabBarController.swift in Sources */,
+				D90422812441728F00738452 /* FavoriteNovel.swift in Sources */,
+				D9AED7502445AC9B00BBB169 /* RankingViewController.swift in Sources */,
+				D97504022442B53B00E63713 /* Extension.swift in Sources */,
+				D98969142446E0080027370E /* RankingCollectionViewCell.swift in Sources */,
+				D936678E244094E6002F4C70 /* FavoriteTableViewCell.swift in Sources */,
+				D9549677244C6B6F003CB6FA /* RankingSegmentedControlView.swift in Sources */,
+				D93667922440B2F5002F4C70 /* StoryCell.swift in Sources */,
+				D97087462440380400324B90 /* AppDelegate.swift in Sources */,
+				D9042284244172CA00738452 /* ApiService.swift in Sources */,
+				D9366788244077B9002F4C70 /* FavoriteViewController.swift in Sources */,
+				D904227F2441724900738452 /* NovelInfo.swift in Sources */,
+				D97087482440380400324B90 /* SceneDelegate.swift in Sources */,
+				D9DAC6352444641100ABD1BE /* DataManager.swift in Sources */,
+				D936678A2440795A002F4C70 /* AddNovelView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D97087502440380600324B90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D97087512440380600324B90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D97087542440380600324B90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D97087552440380600324B90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D97087572440380600324B90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE9C22E4DB91E82959422797 /* Pods-NarouManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W62973XF37;
+				INFOPLIST_FILE = NarouManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tosru.NarouManager;
+				PRODUCT_NAME = NovelManager;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D97087582440380600324B90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B3A445BFEFF1D497E2CA597 /* Pods-NarouManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W62973XF37;
+				INFOPLIST_FILE = NarouManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tosru.NarouManager;
+				PRODUCT_NAME = NovelManager;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D970873D2440380400324B90 /* Build configuration list for PBXProject "NarouManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D97087542440380600324B90 /* Debug */,
+				D97087552440380600324B90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D97087562440380600324B90 /* Build configuration list for PBXNativeTarget "NarouManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D97087572440380600324B90 /* Debug */,
+				D97087582440380600324B90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D970873A2440380400324B90 /* Project object */;
+}
