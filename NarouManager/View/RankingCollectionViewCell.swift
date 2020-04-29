@@ -16,6 +16,7 @@ class BaseButton: UIButton {
     super.init(frame: frame)
     
     setTitleColor(.black, for: .normal)
+    titleLabel?.lineBreakMode = .byTruncatingTail
     contentHorizontalAlignment = .left
     translatesAutoresizingMaskIntoConstraints = false
   }
@@ -25,6 +26,7 @@ class BaseButton: UIButton {
   }
   
   func startLoading() {
+    setTitle("", for: .normal)
     layer.cornerRadius = 15
     backgroundColor = UIColor(red: 213 / 255, green: 213 / 255, blue: 213 / 255, alpha: 1)
   }

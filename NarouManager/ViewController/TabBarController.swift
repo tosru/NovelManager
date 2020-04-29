@@ -24,21 +24,14 @@ class TabBarController: UITabBarController {
     let starImage = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
     favoriteNC.tabBarItem = UITabBarItem(title: "お気に入り", image: starImage, tag: 0)
     
-    // 完成するまで、実機でビルドするときはランキングを消しておく
-    #if targetEnvironment(simulator)
-      let rankingVC = RankingViewController()
-      let rankingNC = UINavigationController(rootViewController: rankingVC)
-      rankingNC.view.backgroundColor = .white
-      rankingNC.view.frame = view.frame
-      let rankingImage = UIImage(named: "ranking")?.withRenderingMode(.alwaysTemplate)
-      
-      rankingNC.tabBarItem = UITabBarItem(title: "ランキング", image: rankingImage, tag: 1)
-      
-      viewControllers = [favoriteNC, rankingNC]
-    #else
-      viewControllers = [favoriteNC]
-    #endif
+    let rankingVC = RankingViewController()
+    let rankingNC = UINavigationController(rootViewController: rankingVC)
+    rankingNC.view.backgroundColor = .white
+    rankingNC.view.frame = view.frame
+    let rankingImage = UIImage(named: "ranking")?.withRenderingMode(.alwaysTemplate)
+    rankingNC.tabBarItem = UITabBarItem(title: "ランキング", image: rankingImage, tag: 1)
     
+    viewControllers = [favoriteNC, rankingNC]
   }
 
 }

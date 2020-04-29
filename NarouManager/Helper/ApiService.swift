@@ -31,21 +31,21 @@ class ApiService {
         print("Error", "should select genre")
         return
       }
-      var rankingOfGenreNovlesInfo: [NovelInfo] = []
+      var rankingOfGenreNovelsInfo: [NovelInfo] = []
       let urlString = { (genreId: Int) -> String in
         return rankingBaseUrl + "&order=hyoka&genre=\(genreId)"
       }
       // 指定したジャンルの順に入れるために以下のような方法を取っている
       // FIXME: これだとジャンルを追加するたびに変更する必要がある
       fetchJson(from: urlString(genres[0].rawValue)) { novelsInfo in
-        rankingOfGenreNovlesInfo.append(contentsOf: novelsInfo)
+        rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
         self.fetchJson(from: urlString(genres[1].rawValue)) { novelsInfo in
-          rankingOfGenreNovlesInfo.append(contentsOf: novelsInfo)
+          rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
           self.fetchJson(from: urlString(genres[2].rawValue)) { novelsInfo in
-            rankingOfGenreNovlesInfo.append(contentsOf: novelsInfo)
+            rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
             self.fetchJson(from: urlString(genres[3].rawValue)) { novelsInfo in
-              rankingOfGenreNovlesInfo.append(contentsOf: novelsInfo)
-              completion(rankingOfGenreNovlesInfo)
+              rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
+              completion(rankingOfGenreNovelsInfo)
             }
           }
         }

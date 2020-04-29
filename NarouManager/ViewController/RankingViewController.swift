@@ -118,13 +118,10 @@ class RankingViewController: UIViewController {
     )
   }
   
-  // FIXME: なぜか初回のみ期間からジャンル表記へ切り替えた時にcellに何も表示されなくなる
   @objc private func handleSegmentedControl() {
     isDisplayingPeriodRanking.toggle()
     collectionView.reloadData()
-    if isDisplayingPeriodRanking && periodNovelsInfo.isEmpty {
-      // デフォルトで期間が選択されているのでここに入ることはないと思う
-    } else if !isDisplayingPeriodRanking && genreNovelsInfo.isEmpty {
+    if !isDisplayingPeriodRanking && genreNovelsInfo.isEmpty {
       ApiService.shared.fetchRankingNovelInfo(type: .genre, genres: genres) { novelsInfo in
         self.genreNovelsInfo = novelsInfo.chunked(by: 3)
         self.collectionView.reloadData()
@@ -180,7 +177,7 @@ extension RankingViewController: UICollectionViewDataSource, UICollectionViewDel
     if periodNovelsInfo.isEmpty && genreNovelsInfo.isEmpty {
       return 5
     }
-    return isDisplayingPeriodRanking ? periodNovelsInfo.count : genreNovelsInfo.count
+    return isDisplayingPeriodRanking ? periods.count : genres.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
