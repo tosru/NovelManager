@@ -4,19 +4,16 @@
 
 話数を選択すると、SFSafariViewへ遷移します。
 
-|                            ホーム                            |                           話数選択                           |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![](https://raw.githubusercontent.com/tosru/Resource/master/NovelManager/home.png) | ![](https://raw.githubusercontent.com/tosru/Resource/master/NovelManager/select.png) |
+|                            ホーム                            |                           話数選択                           |                          ランキング                          |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![](https://raw.githubusercontent.com/tosru/Resource/master/NovelManager/home.png) | ![](https://raw.githubusercontent.com/tosru/Resource/master/NovelManager/select.png) | ![](https://raw.githubusercontent.com/tosru/Resource/master/NovelManager/ranking.png) |
 
 ## 機能
 
 - 小説をお気に入りとして登録する
 - 最新話が投稿されているか確認する
 - どこまで読んだかを保存する
-
-## 開発中
-
-- 簡単なランキング表示(開発中のためシュミレーターで実行したときのみ表示されるようにしている)
+- ランキングを表示する
 
 ## 使用したライブラリ・API
 
