@@ -13,7 +13,8 @@ enum RankingType: Int {
   case genre
 }
 
-enum NovelGenre: Int {
+enum NovelGenre: Int, CaseIterable {
+  // 新たにジャンルを追加する場合は、genreIDが昇順になるようにする
   case isekaiRennai = 101
   case gennjituSekaiRennai = 102
   case hiFantasy = 201
@@ -31,15 +32,18 @@ enum NovelGenre: Int {
       return "ローファンタジー"
     }
   }
-  
 }
 
 class RankingViewController: UIViewController {
   
   private var periodNovelsInfo: [[NovelInfo]] = []
-  private var genreNovelsInfo: [[NovelInfo]] = []
+  private var genreNovelsInfo: [[NovelInfo]] = [] {
+    didSet {
+      genreNovelsInfo.sort { $0[0].genre! < $1[0].genre! }
+    }
+  }
   private let periods = ["日間", "週間", "月間", "四半期", "年間"]
-  private let genres: [NovelGenre] = [.isekaiRennai, .gennjituSekaiRennai, .hiFantasy, .lowFantasy]
+  private let genres: [NovelGenre] = NovelGenre.allCases
   private let cellId = "rVCcellId"
   private var isDisplayingPeriodRanking = true
   private lazy var collectionView: UICollectionView = {

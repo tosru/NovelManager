@@ -11,20 +11,31 @@ import Foundation
 class ApiService {
   
   static let shared = ApiService()
-  private let baseURL = "https://api.syosetu.com/novelapi/api/?out=json&of=t-n-ga-e"
+  private let baseURL = "https://api.syosetu.com/novelapi/api/?out=json"
   
   func fetchNovelInfo(fromNcode ncode: String, completion: @escaping ([NovelInfo]) -> Void) {
-    fetchJson(from: baseURL + "&ncode=" + ncode, completion: completion)
+//    fetchJson(from: baseURL + "&ncode=" + ncode, completion: completion)
+    fetchJson(from: "\(baseURL)&of=t-n-ga-e&ncode=\(ncode)") { novelInfo in
+      DispatchQueue.main.async {
+        completion(novelInfo)
+      }
+    }
   }
   
   func fetchNovelsInfo(fromNcodes ncodes: [String], completion: @escaping ([NovelInfo]) -> Void) {
     if ncodes.isEmpty { return }
     let ncodes = ncodes.joined(separator: "-")
-    fetchJson(from: baseURL + "&ncode=" + ncodes, completion: completion)
+//    fetchJson(from: baseURL + "&ncode=" + ncodes, completion: completion)
+    fetchJson(from: "\(baseURL)&of=t-n-ga-e&ncode=\(ncodes)") { novelInfo in
+      DispatchQueue.main.async {
+        completion(novelInfo)
+      }
+    }
   }
   
   func fetchRankingNovelInfo(type: RankingType, genres: [NovelGenre]? = nil, completion: @escaping ([NovelInfo]) -> Void) {
-    let rankingBaseUrl = baseURL + "&lim=3"
+    
+    let rankingBaseURL = "\(baseURL)&lim=3"
     switch type {
     case .genre:
       guard let genres = genres else {
@@ -33,29 +44,32 @@ class ApiService {
       }
       var rankingOfGenreNovelsInfo: [NovelInfo] = []
       let urlString = { (genreId: Int) -> String in
-        return rankingBaseUrl + "&order=hyoka&genre=\(genreId)"
+        return "\(rankingBaseURL)&order=hyoka&genre=\(genreId)&of=t-n-ga-e-g"
       }
-      // 指定したジャンルの順に入れるために以下のような方法を取っている
-      // FIXME: これだとジャンルを追加するたびに変更する必要がある
-      fetchJson(from: urlString(genres[0].rawValue)) { novelsInfo in
-        rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
-        self.fetchJson(from: urlString(genres[1].rawValue)) { novelsInfo in
-          rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
-          self.fetchJson(from: urlString(genres[2].rawValue)) { novelsInfo in
+     
+      // ランキングの情報を非同期で取得する
+      // ランキング順にはなっているが、ジャンルが引数で与えた順ではなくなるので
+      // RankingViewControllerでgenreIDを用いてソートさせる
+      let dispatchGroup = DispatchGroup()
+      let dispatchQueue = DispatchQueue(label: "genrequeue", attributes: .concurrent)
+      for genre in genres {
+        dispatchGroup.enter()
+        dispatchQueue.async(group: dispatchGroup) {
+          self.fetchJson(from: urlString(genre.rawValue)) { novelsInfo in
             rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
-            self.fetchJson(from: urlString(genres[3].rawValue)) { novelsInfo in
-              rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
-              completion(rankingOfGenreNovelsInfo)
-            }
+            dispatchGroup.leave()
           }
         }
       }
-            
+      dispatchGroup.notify(queue: .main) {
+        completion(rankingOfGenreNovelsInfo)
+      }
+      
     case .period:
       let periods = ["daily", "weekly", "monthly", "quarter", "yearly"]
       var rankingOfPeriodNovelsInfo: [NovelInfo] = []
       let urlString = { (period: String) -> String in
-        return rankingBaseUrl + "&order=" + period + "point"
+        return rankingBaseURL + "&order=" + period + "point&of=t-n-ga-e"
       }
       // 配列にdaily,weekly,monthly,quarter,yearlyの順に入れるために以下のような方法を取っている
       fetchJson(from: urlString(periods[0])) { novelsInfo in
@@ -73,7 +87,9 @@ class ApiService {
               self.fetchJson(from: urlString(periods[4])) { novelsInfo in
                 // yearly
                 rankingOfPeriodNovelsInfo.append(contentsOf: novelsInfo)
-                completion(rankingOfPeriodNovelsInfo)
+                DispatchQueue.main.async {
+                  completion(rankingOfPeriodNovelsInfo)
+                }
               }
             }
           }
@@ -98,9 +114,8 @@ class ApiService {
           nI.ncode = temp
           return nI
         }
-        DispatchQueue.main.async {
-          completion(formattedNovelsInfo)
-        }
+        // 全てがUIの処理を含むわけではないのでmain.asyncを外す
+        completion(formattedNovelsInfo)
       } catch let parseError {
         print("Error", parseError)
       }

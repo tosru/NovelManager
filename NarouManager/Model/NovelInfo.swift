@@ -12,6 +12,7 @@ class NovelInfo: Decodable {
   // 小説の情報
   var title: String?
   var ncode: String?
+  var genre: Int?
   var end: Int?
   var allStoryNumber: Int?
   
@@ -25,6 +26,7 @@ class NovelInfo: Decodable {
   enum CodingKeys: String, CodingKey {
     case title
     case ncode
+    case genre
     case end
     case allStoryNumber = "general_all_no"
   }
