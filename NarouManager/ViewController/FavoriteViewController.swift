@@ -100,7 +100,10 @@ class FavoriteViewController: UIViewController {
 
 extension FavoriteViewController: SendNcodeDelegate {
   func sendNcode(_ ncode: String) {
-    if !isThisNcode(ncode) { return }
+    if !isNcode(ncode) {
+      print("Nコードではありません")
+      return
+    }
     if favoriteNovelsNcode.contains(ncode) { return }
     favoriteNovelsNcode.append(ncode)
     // favoriteNovelsNcodeから要素を削除する時にindexPathを使用する
@@ -121,11 +124,11 @@ extension FavoriteViewController: SendNcodeDelegate {
     }
   }
   
-  private func isThisNcode(_ ncode: String) -> Bool {
-    if ncode.isEmpty { return false }
-    // TODO: ncodeかどうかの判断処理を書く
-    // 現段階では、空文字ではなければtrue
-    return true
+  private func isNcode(_ ncode: String) -> Bool {
+    let pattern = "^n[0-9]{4}[a-z][a-z]?$"
+    guard let regex = try? NSRegularExpression(pattern: pattern) else { return false }
+    let range = NSRange(location: 0, length: ncode.utf16.count)
+    return regex.firstMatch(in: ncode, range: range) != nil
   }
   
 }
