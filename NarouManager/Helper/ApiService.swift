@@ -50,12 +50,14 @@ class ApiService {
       // ランキングの情報を非同期で取得する
       // ランキング順にはなっているが、ジャンルが引数で与えた順ではなくなるので
       // RankingViewControllerでgenreIDを用いてソートさせる
+      let start = Date()
       let dispatchGroup = DispatchGroup()
-      let dispatchQueue = DispatchQueue(label: "genrequeue", attributes: .concurrent)
+      let dispatchQueue = DispatchQueue(label: "genrequeue")
       for genre in genres {
         dispatchGroup.enter()
         dispatchQueue.async(group: dispatchGroup) {
           self.fetchJson(from: urlString(genre.rawValue)) { novelsInfo in
+            // 同じ変数を参照しているので直列処理にする
             rankingOfGenreNovelsInfo.append(contentsOf: novelsInfo)
             dispatchGroup.leave()
           }
@@ -63,6 +65,8 @@ class ApiService {
       }
       dispatchGroup.notify(queue: .main) {
         completion(rankingOfGenreNovelsInfo)
+        let finish = Date().timeIntervalSince(start)
+        print(finish)
       }
       
     case .period:
